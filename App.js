@@ -21,7 +21,7 @@ export default class extends React.Component {
       `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
     );
     this.setState({
-      isloading: false,
+      isLoading: false,
       condition: weather[0].main,
       temp,
     });
@@ -41,8 +41,8 @@ export default class extends React.Component {
     this.getLocation();
   }
   render() {
-    const { isloading, temp, condition } = this.state;
-    return isloading ? (
+    const { isLoading, temp, condition } = this.state;
+    return isLoading ? (
       <Loading />
     ) : (
       <Weather temp={Math.round(temp)} condition={condition} />
